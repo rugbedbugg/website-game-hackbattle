@@ -2,6 +2,8 @@ import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;
 import javax.swing.*;
+import java.util.Random;
+
 
 public class FlappyBird extends JPanel implements ActionListener, KeyListener{
     int boardWidth = 360;
@@ -59,7 +61,9 @@ public class FlappyBird extends JPanel implements ActionListener, KeyListener{
     int gravity = 1;
 
     ArrayList<Pipe> pipes;
-
+    Random random = new Random();
+    
+    
     Timer gameLoop;
     Timer placePipesTimer;
 
@@ -95,7 +99,12 @@ public class FlappyBird extends JPanel implements ActionListener, KeyListener{
     }
 
     public void placePipes() {
+        //(0-1) * pipeHeight/2 -> (0-256)
+        //128
+        //0-128 -(0-256) ---> pipeHeight/4 -> 3/4 pipeheight
+        int randomPipeY = (int) (pipeY - pipeHeight/4 - Math.random()*(pipeHeight/2));
         Pipe topPipe = new Pipe(topPipeImg);
+        topPipe.y = randomPipeY;
         pipes.add(topPipe);
     }
     
