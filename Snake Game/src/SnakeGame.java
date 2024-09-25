@@ -69,27 +69,27 @@ public class SnakeGame extends JPanel implements ActionListener, KeyListener
 
     public void draw(Graphics g)
     {
-        //Grid
+        /*//Grid
         for(int i=0; i<boardWidth/tileSize; i++)
         {
             //(x1, y1, x2, y2)
             g.drawLine(i*tileSize, 0, i*tileSize, boardHeight);
             g.drawLine(0, i*tileSize, boardWidth, i*tileSize);
-        }
+        }*/
 
         //Food
         g.setColor(Color.red);
-        g.fillRect(food.x*tileSize, food.y*tileSize, tileSize, tileSize);
+        g.fill3DRect(food.x*tileSize, food.y*tileSize, tileSize, tileSize, true);
 
         //Snake Head
         g.setColor(Color.green);
-        g.fillRect(tileSize*snakeHead.x, tileSize*snakeHead.y, tileSize, tileSize);
+        g.fill3DRect(tileSize*snakeHead.x, tileSize*snakeHead.y, tileSize, tileSize, true);
 
         //Snake Body
         for(int i = 0; i < snakeBody.size(); i++)
         {
             Tile snakePart = snakeBody.get(i);
-            g.fillRect(snakePart.x*tileSize, snakePart.y*tileSize, tileSize, tileSize);
+            g.fill3DRect(snakePart.x*tileSize, snakePart.y*tileSize, tileSize, tileSize, true);
         }
 
         //Score
