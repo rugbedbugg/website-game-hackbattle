@@ -6,20 +6,15 @@
 
 body {
     font-family: Arial, sans-serif;
-<<<<<<< HEAD
-    
-=======
-    background-image: url('https://wallpapercave.com/wp/QeqHCrT.jpg');
->>>>>>> 6f9fd274c4eaf8620a3ad86a5c6701be08ae36a3
     background-size: cover;
     background-position: center;
     color: #fff;
 }
 
 .container {
-    width: 80%;
+    width: 60%;
     margin: 0 auto;
-    padding: 20px;
+    background-color: rgba(0, 0, 0, 0);
 }
 
 /* Header and ribbon */
@@ -30,8 +25,16 @@ header {
     padding: 20px 0;
 }
 
-.logo {
-    width: 150px;
+.background-clip {
+    width: 100%;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    object-fit: cover;
+
 }
 
 .nav-buttons {
@@ -58,19 +61,15 @@ button:hover {
     display: grid;
     grid-template-columns: 1fr;
     gap: 20px;
-    margin-top: 50px;
+    margin-top: 20px;
 }
 
 .game-item {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px;
-<<<<<<< HEAD
+    padding: 30px;
     background-color: rgba(95, 89, 89, 0.276);
-=======
-    background-color: rgba(0, 0, 0, 0.8);
->>>>>>> 6f9fd274c4eaf8620a3ad86a5c6701be08ae36a3
     border-radius: 10px;
     transition: transform 0.3s;
 }

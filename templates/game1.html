@@ -14,45 +14,12 @@
 <div id="game-container">
     <!-- Our game will be rendered here -->
     <div class="game-window-container">
-<<<<<<< HEAD
         <canvas id="gameWindow" class="game-window">
         </canvas>
-=======
-        <canvas id="gameWindow" class="game-window"></canvas>
-        <button id="fullscreenButton" class="fullscreen-button">
-            <img src="fullscreen-icon.png" alt="Fullscreen Icon">
-        </button>
->>>>>>> 6f9fd274c4eaf8620a3ad86a5c6701be08ae36a3
     </div>
 </div>
 {% endblock %}
 
 
 {% block scripts %}
-<<<<<<< HEAD
-=======
-<scripts>
-    // Fullscreen function
-const fullscreenButton = document.getElementById('fullscreenButton');
-const gameWindow = document.getElementById('gameWindow');
-
-fullscreenButton.addEventListener('click', () => {
-    if (!document.fullscreenElement) {
-        if (gameWindow.requestFullscreen) {
-            gameWindow.requestFullscreen();
-        } else if (gameWindow.mozRequestFullScreen) { // Firefox
-            gameWindow.mozRequestFullScreen();
-        } else if (gameWindow.webkitRequestFullscreen) { // Chrome, Safari and Opera
-            gameWindow.webkitRequestFullscreen();
-        } else if (gameWindow.msRequestFullscreen) { // IE/Edge
-            gameWindow.msRequestFullscreen();
-        }
-    } else {
-        if (document.exitFullscreen) {
-            document.exitFullscreen();
-        }
-    }
-});
-</scripts>
->>>>>>> 6f9fd274c4eaf8620a3ad86a5c6701be08ae36a3
 {% endblock %}
