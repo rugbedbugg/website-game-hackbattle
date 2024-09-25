@@ -6,7 +6,11 @@
 
 body {
     font-family: Arial, sans-serif;
+<<<<<<< HEAD
     
+=======
+    background-image: url('https://wallpapercave.com/wp/QeqHCrT.jpg');
+>>>>>>> 6f9fd274c4eaf8620a3ad86a5c6701be08ae36a3
     background-size: cover;
     background-position: center;
     color: #fff;
@@ -62,7 +66,11 @@ button:hover {
     align-items: center;
     justify-content: space-between;
     padding: 20px;
+<<<<<<< HEAD
     background-color: rgba(95, 89, 89, 0.276);
+=======
+    background-color: rgba(0, 0, 0, 0.8);
+>>>>>>> 6f9fd274c4eaf8620a3ad86a5c6701be08ae36a3
     border-radius: 10px;
     transition: transform 0.3s;
 }
