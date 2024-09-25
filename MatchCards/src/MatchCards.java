@@ -8,7 +8,7 @@ public class MatchCards {
         String cardName;
         ImageIcon cardImageIcon;
 
-        Card(String cardName, ImageIcon card) {
+        Card(String cardName, ImageIcon cardImageIcon) {
             this.cardName = cardName;
             this.cardImageIcon = cardImageIcon;
         }
@@ -70,11 +70,11 @@ public class MatchCards {
 
         //shuffle
         for (int i = 0; i < cardSet.size(); i++) {
-            int j = (int) Math.random() * cardSet.size();
+            int j = (int) (Math.random() * cardSet.size());
             //swap
-            Card temp = cardSet.set(i, cardSet.get(j));
+            Card temp = cardSet.get(i);
+            cardSet.set(i, cardSet.get(j));
             cardSet.set(j, temp);
-
         }
         System.out.println(cardSet);
     }
