@@ -5,7 +5,7 @@ import java.util.Random;
 import java.util.ArrayList;
 import javax.lang.model.SourceVersion;
 
-public class SpaceInvaders extends JPanel {
+public class SpaceInvaders extends JPanel implements ActionListener, KeyListener {
     class Block {
         int x;
         int y;
@@ -46,13 +46,19 @@ public class SpaceInvaders extends JPanel {
     int shipHeight = tileSize;  //32px
     int shipX = tileSize*columns/2 - tileSize;
     int shipY = boardHeight - tileSize*2;
+    int shipVelocityX = tileSize;
+    
 
     Block ship;
 
+    Timer gameLoop;
 
     SpaceInvaders() {
         setPreferredSize(new Dimension(boardWidth, boardHeight));
         setBackground(Color.black);
+        setFocusable(true);
+        addKeyListener(this);
+
 
         //load images
         shipImg = new ImageIcon(getClass().getResource("./ship.png")).getImage();
@@ -69,6 +75,9 @@ public class SpaceInvaders extends JPanel {
 
         ship = new Block(shipX, shipY, shipWidth, shipHeight, shipImg);
 
+        //game timer
+        gameLoop = new Timer(1000/60, this);
+        gameLoop.start();
 
     }
 
@@ -80,6 +89,31 @@ public class SpaceInvaders extends JPanel {
     
     public void draw(Graphics g) {
         g.drawImage(ship.img, ship.x, ship.y, ship.width, ship.height, null);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        repaint();
+    }
+
+    @Override
+    public void keyTyped(KeyEvent e) {
+       
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+        
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+      if (e.getKeyCode() == KeyEvent.VK_LEFT) {
+        ship.x -= shipVelocityX; // move left one tile
+      }
+      else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
+        ship.x += shipVelocityX; // move right one tile
+      }
     }
 
 }

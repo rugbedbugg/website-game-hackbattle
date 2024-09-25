@@ -1,10 +1,9 @@
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
 import java.util.Random;
 import javax.swing.*;
 
-public class SnakeGame extends JPanel implements ActionListener
+public class SnakeGame extends JPanel implements ActionListener, KeyListener
 {
     private class Tile
     {
@@ -39,6 +38,8 @@ public class SnakeGame extends JPanel implements ActionListener
         this.boardHeight = boardHeight;
         setPreferredSize(new Dimension(this.boardWidth, this.boardHeight));
         setBackground(Color.black);
+        addKeyListener(this);
+        setFocusable(true);
 
         snakeHead = new Tile(5, 5);
 
@@ -47,7 +48,7 @@ public class SnakeGame extends JPanel implements ActionListener
         placeFood();
 
         velocityX = 0;
-        velocityY = 1;
+        velocityY = 0;
 
         gameLoop = new Timer(100, this);
         gameLoop.start();
@@ -101,4 +102,36 @@ public class SnakeGame extends JPanel implements ActionListener
 
         repaint();
     }
+
+    @Override
+    public void keyPressed(KeyEvent e)
+    {
+        if(e.getKeyCode() == KeyEvent.VK_UP)
+        {
+            velocityX = 0;
+            velocityY = -1;
+        }
+        if(e.getKeyCode() == KeyEvent.VK_DOWN)
+        {
+            velocityX = 0;
+            velocityY = 1;
+        }
+        if(e.getKeyCode() == KeyEvent.VK_LEFT)
+        {
+            velocityX = -1;
+            velocityY = 0;
+        }
+        if(e.getKeyCode() == KeyEvent.VK_RIGHT)
+        {
+            velocityX = 1;
+            velocityY = 0;
+        }
+    }
+
+    @Override
+    public void keyTyped(KeyEvent e){}
+
+    @Override
+    public void keyReleased(KeyEvent e){}
+
 }
