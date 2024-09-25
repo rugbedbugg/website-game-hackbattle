@@ -1,17 +1,10 @@
-import flask as Flask
-import render_template as render_template
-import redirect as redirect
-import url_for as url_for
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
 @app.route('/')
-def home_redir():
-    return redirect(url_for('home.html'))
-
-@app.route('/home')
 def home():
-    return 'home.html'
+    return render_template('home.html')
 
 @app.route('/<gamename>')
 def game1(gamename):
