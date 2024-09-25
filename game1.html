@@ -24,4 +24,27 @@
 
 
 {% block scripts %}
+<scripts>
+    // Fullscreen function
+const fullscreenButton = document.getElementById('fullscreenButton');
+const gameWindow = document.getElementById('gameWindow');
+
+fullscreenButton.addEventListener('click', () => {
+    if (!document.fullscreenElement) {
+        if (gameWindow.requestFullscreen) {
+            gameWindow.requestFullscreen();
+        } else if (gameWindow.mozRequestFullScreen) { // Firefox
+            gameWindow.mozRequestFullScreen();
+        } else if (gameWindow.webkitRequestFullscreen) { // Chrome, Safari and Opera
+            gameWindow.webkitRequestFullscreen();
+        } else if (gameWindow.msRequestFullscreen) { // IE/Edge
+            gameWindow.msRequestFullscreen();
+        }
+    } else {
+        if (document.exitFullscreen) {
+            document.exitFullscreen();
+        }
+    }
+});
+</scripts>
 {% endblock %}
