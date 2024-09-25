@@ -62,7 +62,7 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
     int alienRows = 2;
     int alienColumns = 3;
     int alienCount = 0; //number of aliens to defeat
-    int alienVelocityX = 4; //alien moving speed
+    int alienVelocityX = 3; //alien moving speed
 
     //bullets
     ArrayList<Block> bulletArray;
@@ -162,6 +162,10 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
                         alienArray.get(j).y += alienHeight;
                     }
                 }
+
+                if (alien.y >= ship.y) {
+                    gameOver = true;
+                }
             }
         }
 
@@ -193,6 +197,7 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
             alienRows = Math.min(alienRows+1, rows -6); //  cap row at 16-6 = 10
             alienArray.clear();
             bulletArray.clear();
+            alienVelocityX = 3;
             createAliens();
         }
     }
@@ -225,6 +230,10 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
     public void actionPerformed(ActionEvent e) {
         move();
         repaint();
+        if (gameOver) {
+            gameLoop.stop();
+
+        }
     }
 
     @Override
