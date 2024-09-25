@@ -142,7 +142,7 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
 
                 // if alien touches the borders
                 if (alien.x + alien.width >= boardWidth || alien.x <= 0) {
-                    alienVelocityX *= -1.3;
+                    alienVelocityX *= -1.35;
                     alien.x += alienVelocityX*2;
 
                     //move aliens down by one row
