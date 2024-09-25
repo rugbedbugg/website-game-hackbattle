@@ -3,56 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Defeat INE-VIT-ABLE</title>
+    <title>Defeat Ine-VIT-able</title>
     <link rel="stylesheet" href="../static/homestyle.css">
 </head>
 <body>
     
     <div class="container">
     <header>
-        <img src="https://github.com/aishwarrya2006/website-flask/commit/b34c52fe0a28e9714988874dd26b95ec9fd6be8a" alt="Website Logo" class="logo">
+        <video autoplay loop muted plays-inline class="background-cip">
+            <source src="../static/2024-09-25 22-13-28.mp4" type="video/mp4">
+        </video>
         <div class="nav-buttons">
-            <button class="rate-us">Rate Us</button>
-            <button class="about-us">About Us</button>
+            <form action="{{ url_for('rate_us') }}">
+                <button class="rate-us">Rate Us</button>
+            </form>
+            <form action="{{ url_for('about_us') }}">
+                <button class="about-us">About Us</button>            
+            </form>
         </div>
     </header>
         
     <section class="catalogue">
+        <div>
             <div class="game-item">
                 <img src="game1-logo.png" alt="Game 1 Logo" class="game-logo">
                 <div class="game-details">
-                    <h3>Game 1</h3>
+                    <h3>Aritra's Game</h3>
                     <p>game 1 description.</p>
                 </div>
-                <button class="play-button">Play</button>
+                <form action="../templates/pre_game1.html">
+                    <button class="play-button">More</button>
+                </form>
             </div>
 
             <div class="game-item">
                 <img src="game2-logo.png" alt="Game 2 Logo" class="game-logo">
                 <div class="game-details">
+                    <h3>Space </h3>
+                    <p>game 2 description.</p>
+                </div>
+                <form action="../templates/pre_game2.html">
+                    <button class="play-button">More</button>
+                </form>
+            </div>
+
+            <div class="game-item">
+                <img src="../static/flappybird_logo.jpg" alt="Game 3 Logo" class="game-logo">
+                <div class="game-details">
+                    <h3>Flappy Bird</h3>
+                    <p>Flappy bird. An Arcade style game, where the player controls Faby, the bird. Defeat Inevitable!</p>
+                </div>
+                <form action="../templates/pre_game3.html">
+                    <button class="play-button">More</button>
+                </form>
+            </div>
+        </div>
+
+
+        <div>
+            <div class="game-item">
+                <img src="game4-logo.png" alt="Game 1 Logo" class="game-logo">
+                <div class="game-details">
+                    <h3>Game 1</h3>
+                    <p>game 1 description.</p>
+                </div>
+                <form action="../templates/pre_game4.html">
+                    <button class="play-button">More</button>
+                </form>
+            </div>
+
+            <div class="game-item">
+                <img src="game5-logo.png" alt="Game 2 Logo" class="game-logo">
+                <div class="game-details">
                     <h3>Game 2</h3>
                     <p>game 2 description.</p>
                 </div>
-                <button class="play-button">Play</button>
+                <form action="../templates/pre_game5.html">
+                    <button class="play-button">More</button>
+                </form>
             </div>
 
             <div class="game-item">
-                <img src="game3-logo.png" alt="Game 3 Logo" class="game-logo">
+                <img src="game5-logo.png" alt="Game 2 Logo" class="game-logo">
                 <div class="game-details">
-                    <h3>Game 3</h3>
-                    <p>game 3 description.</p>
+                    <h3>Game 2</h3>
+                    <p>game 2 description.</p>
                 </div>
-                <button class="play-button">Play</button>
+                <form action="../templates/pre_game6.html">
+                    <button class="play-button">More</button>
+                </form>
             </div>
+        </div>
 
-            <div class="game-item">
-                <img src="game4-logo.png" alt="Game 4 Logo" class="game-logo">
-                <div class="game-details">
-                    <h3>Game 4</h3>
-                    <p>game 4 description.</p>
-                </div>
-                <button class="play-button">Play</button>
-            </div>
-        </section>
+
+    </section>
 </body>
 </html>

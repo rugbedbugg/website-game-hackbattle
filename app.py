@@ -1,26 +1,34 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect, url_for
 
 app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return render_template('home.html')
+    return render_template(redirect(url_for("home.html")))
 
 @app.route('/<gamename>')
-def game1(gamename):
-    return render_template('game1.html', gamename="Flappy Bird")
+def pre_game1(gamename):
+    return render_template(redirect(url_for("pre_game1.html")), gamename="Aritra's Game")
 
 @app.route('/<gamename>')
-def game2(gamename):
-    return render_template('game2.html', gamename ="Snake Game")
+def pre_game2(gamename):
+    return render_template(redirect(url_for("pre_game2.html")), gamename="Space Invaders")
 
 @app.route('/<gamename>')
-def game3(gamename):
-    return render_template('game3.html', gamename="Space Invaders")
+def pre_game3(gamename):
+    return render_template(redirect(url_for("pre_game3.html")), gamename="Flappy Bird")
 
 @app.route('/<gamename>')
-def game4(gamename):
-    return render_template('game4.html', gamename ="no_name")
+def pre_game4(gamename):
+    return render_template(redirect(url_for("pre_game4.html")), gamename='Feed The "Python"')
+
+@app.route('/<gamename>')
+def pre_game5(gamename):
+    return render_template(redirect(url_for("pre_game5.html")), gamename="Memory Mayhem")
+
+@app.route('/<gamename>')
+def pre_game6(gamename):
+    return render_template(redirect(url_for("pre_game6.html")), gamename="Tetris")
 
 if __name__ == '__main__':
     app.run(debug=True)

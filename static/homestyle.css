@@ -6,7 +6,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-image: url('https://wallpapercave.com/wp/QeqHCrT.jpg');
+    
     background-size: cover;
     background-position: center;
     color: #fff;
@@ -62,7 +62,7 @@ button:hover {
     align-items: center;
     justify-content: space-between;
     padding: 20px;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(95, 89, 89, 0.276);
     border-radius: 10px;
     transition: transform 0.3s;
 }
