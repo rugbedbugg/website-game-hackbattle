@@ -47,7 +47,7 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
     int shipX = tileSize*columns/2 - tileSize;
     int shipY = boardHeight - tileSize*2;
     int shipVelocityX = tileSize;
-    
+
 
     Block ship;
 
@@ -108,10 +108,10 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
 
     @Override
     public void keyReleased(KeyEvent e) {
-      if (e.getKeyCode() == KeyEvent.VK_LEFT) {
+      if (e.getKeyCode() == KeyEvent.VK_LEFT && ship.x - shipVelocityX >=0) {
         ship.x -= shipVelocityX; // move left one tile
       }
-      else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
+      else if (e.getKeyCode() == KeyEvent.VK_RIGHT && ship.x + ship.width + shipVelocityX <= boardWidth) {
         ship.x += shipVelocityX; // move right one tile
       }
     }
