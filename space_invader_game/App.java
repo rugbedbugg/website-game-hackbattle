@@ -19,7 +19,8 @@ public class App {
         SpaceInvaders spaceInvaders = new SpaceInvaders();
         frame.add(spaceInvaders);
         frame.pack();
+        spaceInvaders.requestFocus();
         frame.setVisible(true);
-        
+
     }
 }
