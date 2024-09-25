@@ -1,7 +1,5 @@
 import java.awt.*;
 import java.awt.event.*;
-import java.util.ArrayList;
-import java.util.Random;
 import javax.swing.*;
 
 public class FlappyBird extends JPanel implements ActionListener{
@@ -72,6 +70,7 @@ public class FlappyBird extends JPanel implements ActionListener{
     public void move() {
         //bird
         bird.y += velocityY;
+        bird.y = Math.max(bird.y, 0);
     }
 
     @Override
