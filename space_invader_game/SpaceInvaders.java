@@ -62,7 +62,7 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
     int alienRows = 2;
     int alienColumns = 3;
     int alienCount = 0; //number of aliens to defeat
-    int alienVelocityX = 3; //alien moving speed
+    int alienVelocityX = 4; //alien moving speed
 
     //bullets
     ArrayList<Block> bulletArray;
@@ -142,7 +142,7 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
 
                 // if alien touches the borders
                 if (alien.x + alien.width >= boardWidth || alien.x <= 0) {
-                    alienVelocityX *= -1.35;
+                    alienVelocityX *= -1.1;
                     alien.x += alienVelocityX*2;
 
                     //move aliens down by one row
@@ -167,6 +167,19 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
                     alienCount--;
                 }
             } 
+        }
+        while (bulletArray.size() > 0 && (bulletArray.get(0).used || bulletArray.get(0).y < 0)) {
+            bulletArray.remove(0); //removes the first element of the array
+        }
+
+        //next level
+        if (alienCount == 0) {
+            //increase the number of columns and rows by 1
+            alienColumns = Math.min(alienColumns + 1, columns/2 -2); //cap column at 16/2 -2 = 6
+            alienRows = Math.min(alienRows+1, rows -6); //  cap row at 16-6 = 10
+            alienArray.clear();
+            bulletArray.clear();
+            createAliens();
         }
     }
 
