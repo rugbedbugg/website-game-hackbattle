@@ -142,7 +142,7 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
 
                 // if alien touches the borders
                 if (alien.x + alien.width >= boardWidth || alien.x <= 0) {
-                    alienVelocityX *= -1.28;
+                    alienVelocityX *= -1.3;
                     alien.x += alienVelocityX*2;
 
                     //move aliens down by one row
@@ -157,6 +157,16 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
         for (int i= 0; i < bulletArray.size(); i++) {
             Block bullet = bulletArray.get(i);
             bullet.y += bulletVelocityY;
+
+            //bullet collision with aliens
+            for (int j = 0; j< alienArray.size(); j++) {
+                Block alien = alienArray.get(j);
+                if (!bullet.used && alien.alive && detectCollision(bullet, alien)) {
+                    bullet.used = true;
+                    alien.alive = false;
+                    alienCount--;
+                }
+            } 
         }
     }
 
@@ -178,6 +188,12 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
         alienCount = alienArray.size();
     }
 
+    public boolean detectCollision(Block a, Block b) {
+        return a.x < b.x + b.width && //a's top left corner doesnt reach b's top right corner
+               a.x + a.width > b.x && //a's top right corner b's top left corner
+               a.y < b.y + b.height;  //a's bottom left corner passes b's top left corner
+    }
+
     @Override
     public void actionPerformed(ActionEvent e) {
         move();
@@ -193,6 +209,7 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
     public void keyPressed(KeyEvent e) {
         
     }
+
 
     @Override
     public void keyReleased(KeyEvent e) {
