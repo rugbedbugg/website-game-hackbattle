@@ -1,4 +1,6 @@
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.*;
 
 public class TicTacToe 
@@ -53,7 +55,25 @@ public class TicTacToe
                  tile.setForeground(Color.white);
                  tile.setFont(new Font("Arial", Font.BOLD, 120));
                  tile.setFocusable(false);
-                 
+                 //tile.setText(currentPlayer);
+
+                 tile.addActionListener((ActionListener) new ActionListener(){
+                    public void actionPerformed(ActionEvent e)
+                    {
+                        JButton tile = (JButton)e.getSource();
+                        if(tile.getText()=="")
+                        {
+                            tile.setText(currentPlayer);
+
+                            currentPlayer = currentPlayer == playerX ? playerO : playerX;
+                            textLabel.setText(currentPlayer+"'s turn.");
+                        }
+                        
+
+
+                    }
+                 });
+
             }
         }
 
