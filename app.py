@@ -6,27 +6,27 @@ app = Flask(__name__)
 def home():
     return render_template('home.html')
 
-@app.route('/<gamename>')
-def pre_game1(gamename):
+@app.route('/Galaxy Impact')
+def pre_game1():
     return redirect(url_for("pre_game1"))
 
-@app.route('/Space Invaders')
-def pre_game2(gamename):
+@app.route('/Flappy Bird')
+def pre_game2():
     return redirect(url_for("pre_game2"))
 
-@app.route('/Flappy Bird')
-def pre_game3(gamename):
+@app.route('/Feed The "Python"')
+def pre_game3():
     return redirect(url_for("pre_game3"))
 
-@app.route('/Feed The "Python"')
-def pre_game4(gamename):
+@app.route("/Black Jack")
+def pre_game4():
     return redirect(url_for("pre_game4"))
 
-@app.route('/about us')
+@app.route('/About Us')
 def about_us():
     return render_template('about_us.html')
 
-@app.route('/rate us')
+@app.route('/Rate Us')
 def rate_us():
     return render_template('rate_us.html')
 
