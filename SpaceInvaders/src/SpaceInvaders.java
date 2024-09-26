@@ -3,7 +3,6 @@ import javax.swing.*;
 import java.awt.event.*;
 import java.util.Random;
 import java.util.ArrayList;
-import javax.lang.model.SourceVersion;
 
 public class SpaceInvaders extends JPanel implements ActionListener, KeyListener {
     class Block {
