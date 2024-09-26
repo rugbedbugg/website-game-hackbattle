@@ -1,12 +1,130 @@
-{% extends 'gamebase.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Defeat INE-VIT-ABLE | The "Ine-VIT-able" Team</title>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
 
+    body {
+    font-family: Arial, sans-serif;
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    }
 
-{% block title %}
-<title>Defeat INE-VIT-ABLE | The "Ine-VIT-able" Team</title>
-{% endblock %}
+    .container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    }
 
+    /* Header and ribbon */
+    header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    }
 
-{% block content %}
+    .nav-buttons {
+    display: flex;
+    gap: 20px;
+    }
+
+    .button {
+    background-color: #00FF00;
+    color: #000;
+    padding: 10px 20px;
+    border: none;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.3s;
+    }
+
+    .button.active {
+    background-color: #000;
+    color: #00FF00;
+    border: 2px solid #00FF00;
+    }
+
+    .button:hover {
+    transform: scale(1.1);
+    }
+
+    /* About Us Section */
+    .about-us-section {
+    text-align: center;
+    padding: 50px 0;
+    }
+
+    .about-us-section h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #00FF00;
+    }
+
+    .about-us-section p {
+    font-size: 18px;
+    margin-bottom: 40px;
+    color: #ccc;
+    }
+
+    /* Team Section */
+    .team {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    }
+
+    .team-member {
+    width: 250px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s;
+    }
+
+    .team-member:hover {
+    transform: scale(1.05);
+    }
+
+    .team-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    }
+
+    .team-member h3 {
+    font-size: 22px;
+    color: #00FF00;
+    }
+
+    .team-member h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #ccc;
+    }
+
+    .team-member p {
+    font-size: 16px;
+    color: #bbb;
+    }
+
+</style>
+</head>
+
+<body>
 <div class="container">
     <!-- Top ribbon with logo and navigation -->
     <header>
@@ -58,4 +176,5 @@
         </div>
     </section>
 </div>
-{% endblock %}
+</body>
+</html>
